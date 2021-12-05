@@ -40,7 +40,21 @@ def get_pokemons():
         pokemon_list.append(poke_dict)
         # evolutions
         row_evolution = soup.find(text='Linea Evolutiva')
-        
+        # ataques
+        # https://www.pokexperto.net/index2.php?seccion=nds/nationaldex/ \
+        # 'movimientos_nivel&pk=1#rby'
+        pokemon = {
+        'name' : 'name', 'level' : 1,
+        'attacks' :
+            [
+                {'attack_name' : '',
+                'damage' : 10,
+                'attack_type' : '',
+                'minimum_level' : 1
+                },
+            ],
+        'health' : 100}
+
     return pokemon_list
     # with open('pokedex.csv', 'w') as file:
     #     writer = csv.writer(file)
@@ -61,37 +75,8 @@ for item in pokemons:
     
     print(f"Nombre: {item['name']}. Tipo{tipo_suffix}:", end=' ')
     print(*item['types'], sep=',')
-
-
-pokemon = 
-        {'name' : 'name', 'level' : 1,
-        'attacks' :
-            [
-                {'attack_name' : '',
-                'damage' : 10,
-                'attack_type' : '',
-                'minimum_level' : 1
-                },
-            ],
-        'health' : 100}
-
-row_evolution = soup.find(text='Linea Evolutiva')
-
-
-
-
+    
 # with open('pokedex.csv', 'r') as f:
 #     content = csv.reader(f)
 #     for item in content:
-#         print(item[0])
-# ataques
-# https://www.pokexperto.net/index2.php?seccion=nds/nationaldex/movimientos_nivel&pk=1#rby
-# pokemon_dict = {'name':'',
-#                 'nivel':0,
-#                 'attacks':[{'attack name': '',
-#                             'required level':1,
-#                             'damage': 10,
-#                             'attack type':''}],
-#                 'health':100,
-#
-#                 }
+#         print(item[0])#
